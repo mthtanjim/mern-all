@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Image(jpg, png) Uplaoder.... </h1>
+
+    <form
+    action="http://localhost:8000/file-upload/"
+    method="post"
+    enctype="multipart/form-data"
+    >
+    <input type="file" name="avatar" />
+    <input type="file" name="doc" />
+    <!-- <input type="file" name="gallery" multiple /> -->
+    <!-- <input type="text" name="name" multiple /> -->
+    <input type="submit" value="Submit" />
+    </form>
+
+</body>
+</html>
