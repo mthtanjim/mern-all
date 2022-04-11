@@ -19,6 +19,11 @@ const UP_F = "./upload/";
 app.use('/users/', require('./routers/userRoutes'))
 app.use('/users/', require('./routers/phoneRoutes'))
 
+
+
+
+
+
 // Define the storage
 const storage = multer.diskStorage({
     destination: (req, file, cd) => {
