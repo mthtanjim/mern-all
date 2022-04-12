@@ -2,6 +2,7 @@ const User = require("../model/User")
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const {serverError, resourceError} = require('../util/error')
+const loginValidator = require('../validator/loginValidator')
 
 module.exports = {
 
@@ -9,6 +10,12 @@ module.exports = {
 
     async login(req, res){
         const {email, password} = req.body
+
+        let validate = loginValidator({email, password}) 
+        
+        if (!validate.isValid) {
+            return res.status(400).json(validate.error)
+        }
 
         User.findOne({email})
             .then(user => {
